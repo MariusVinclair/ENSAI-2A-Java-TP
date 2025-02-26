@@ -1,6 +1,8 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -133,9 +135,40 @@ public class Password {
      */
     public static String generatePassword(int nbCar) {
 
-        // Code here
+        assert nbCar >= 4;
 
-        return null;
+        List<Character> liCar = new ArrayList<>();
+        liCar.addAll(List.of('A', 'a', '0', '.'));
+
+        SecureRandom random = new SecureRandom();
+        int randomInteger1 = random.nextInt(10);
+        char chiffre1 = (char) (randomInteger1 + '0');
+        int randomInteger2 = random.nextInt(10);
+        char chiffre2 = (char) (randomInteger2 + '0');
+
+        Character minuscule1 = (char) (random.nextInt(26) + 97);
+        Character minuscule2 = (char) (random.nextInt(26) + 97);
+
+        Character majuscule1 = (char) (random.nextInt(26) + 65);
+        Character majuscule2 = (char) (random.nextInt(26) + 65);
+
+        Character special1 = (char) (random.nextInt(16) + 32);
+        Character special2 = (char) (random.nextInt(16) + 32);
+
+        liCar.addAll(List.of(special1, special2, chiffre1, chiffre2, minuscule1, minuscule2, majuscule1, majuscule2));
+        Collections.shuffle(liCar);
+
+        StringBuilder sb = new StringBuilder();
+
+        int i = 0;
+        while (i < liCar.size() - 1) {
+            sb.append(liCar.get(i));
+            i++;
+        }
+        sb.append(liCar.get(i));
+
+        String res = sb.toString();
+        return res;
     }
 
     public static void main(String[] args) {
