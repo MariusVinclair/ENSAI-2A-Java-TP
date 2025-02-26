@@ -8,11 +8,16 @@ public class Login {
     public static void main(String[] args) {
         HashMap<String, String> userDatabase = loadUserDatabase("../data/user_hashpwd.csv");
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-
-            // Code here
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+        if (userDatabase.containsKey(username)) {
+            System.out.print("Enter password: ");
+            String password = scanner.nextLine();
+            if (password.equals(userDatabase.get(username))) {
+                System.out.println("Login successful!");
+            }
         }
+        scanner.close();
     }
 
     /**
