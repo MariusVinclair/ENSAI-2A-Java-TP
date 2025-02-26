@@ -48,7 +48,7 @@ public class Password {
             boolean isEqual = hashedPassword.equals(targetHash);
             if (isEqual) {
                 String result = content;
-                return(result);
+                return (result);
             }
         }
         return null;
@@ -69,8 +69,33 @@ public class Password {
      * @return true if the password is strong, false otherwise
      */
     public static boolean isStrongPassword(String password) {
+        boolean hasTwelveCharacters = password.length() > 11;
+        boolean hasOneUppercaseLetter = false;
+        boolean hasOneLowercaseLetter = false;
+        boolean hasOneDigit = false;
+        boolean hasNoWhitespace = true;
 
-        // Code here
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+
+            if (Character.isUpperCase(c)) {
+                hasOneUppercaseLetter = true;
+            }
+            if (Character.isLowerCase(c)) {
+                hasOneLowercaseLetter = true;
+            }
+            if (Character.isDigit(c)) {
+                hasOneDigit = true;
+            }
+            if (Character.isWhitespace(c)) {
+                hasNoWhitespace = false;
+            }
+        }
+
+        if (hasTwelveCharacters && hasOneUppercaseLetter && hasOneLowercaseLetter && hasOneDigit && hasNoWhitespace) {
+            return true;
+        }
+        ;
 
         return false;
     }
