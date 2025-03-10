@@ -17,13 +17,17 @@ public class Library {
     // Attributes
     private String name;
     private ArrayList<Item> items;
+    private ArrayList<Loan> activeLoans;
+    private ArrayList<Loan> completedLoans;
 
     /**
      * Constructs a new Library object.
      */
-    public Library(String name, ArrayList<Item> items) {
+    public Library(String name, ArrayList<Item> items, ArrayList<Loan> activeLoans, ArrayList<Loan> completedLoans) {
         this.name = name;
         this.items = items;
+        this.activeLoans = activeLoans;
+        this.completedLoans = completedLoans;
     }
 
     public void addItem(Item item) {

@@ -22,4 +22,15 @@ public class Loan {
         this.startDate = startDate;
         this.returnDate = null;
     }
+
+    /**
+     * Sets a return Date.
+     */
+    public void setReturnDate(Date newReturnDate) {
+        this.returnDate = newReturnDate;
+    }
+
+    public String toString() {
+        return "Item " + this.item + " borrowed by " + this.student;
+    }
 }
