@@ -23,6 +23,11 @@ public class Magazine extends Item {
     }
 
     @Override
+    public Author getAuthor() {
+        return null;
+    }
+
+    @Override
     public String toString() {
         return "Book " + title + " written by " + issueNumber;
     }

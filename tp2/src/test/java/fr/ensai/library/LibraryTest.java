@@ -45,4 +45,21 @@ class LibraryTest {
         assertNull(foundLoan);
     }
 
+    @Test
+    void getBooksForAuthorTest() {
+        // GIVEN
+        ArrayList<Loan> emptyLoans = new ArrayList<>();
+        Author author1 = new Author("Author 1", 0, null);
+        Book book1 = new Book("Book 1", 2008, 320, "978-0321765723", new Author("Author 1", 0, null));
+        ArrayList<Item> books = new ArrayList<>();
+        books.add(book1);   
+        Library library = new Library("Test Library", books, emptyLoans, null);
+
+        // WHEN
+        ArrayList foundBooks = library.getBooksForAuthor(author1);
+
+        // THEN
+        assertEquals(foundBooks, books);
+    }
+
 }

@@ -18,6 +18,7 @@ public class Book extends Item {
         this.author = author;
     }
 
+    @Override
     public Author getAuthor() {
         return author;
     }

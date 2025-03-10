@@ -18,4 +18,6 @@ public abstract class Item {
         this.year = year;
         this.pageCount = pageCount;
     }
+
+    public abstract Author getAuthor();
 }

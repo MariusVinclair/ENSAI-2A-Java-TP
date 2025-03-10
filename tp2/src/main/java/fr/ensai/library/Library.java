@@ -58,6 +58,16 @@ public class Library {
         return null;
     }
 
+    public ArrayList<Item> getBooksForAuthor(Author author) {
+        ArrayList<Item> books = new ArrayList<>();
+        for (Item book : this.items) {
+            if (author.equals(book.getAuthor())) {
+                books.add(book);
+            }
+        }
+        return books;
+    }
+
     /**
      * Loads books from a CSV file and adds them to the library.
      * 
