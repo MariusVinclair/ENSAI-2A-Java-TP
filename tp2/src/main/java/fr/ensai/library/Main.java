@@ -31,12 +31,14 @@ public class Main {
 
         ArrayList list_items = new ArrayList<Item>();
         list_items.add(fellowshipOfTheRing);
+        list_items.add(equipe);
+        list_items.add(leMonde);
 
         Library cdi = new Library("cdi", list_items);
 
         System.out.println(fellowshipOfTheRing.toString());
 
-        cdi.loadBooksFromCSV(books.csv);
+        cdi.loadBooksFromCSV("books.csv");
 
         cdi.displayItems();
     }
