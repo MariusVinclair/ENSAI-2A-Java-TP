@@ -14,6 +14,20 @@ public class Main {
             423,
             "978-0-618-26025-6",
             tolkien);
+        
+        Magazine equipe = new Magazine(
+            "L'Equipe",
+            2024,
+            50,
+            "978-0-618-26025-7",
+            512);
+
+        Magazine leMonde = new Magazine(
+            "Le Monde",
+            2025,
+            60,
+            "978-0-618-26025-8",
+            1056);
 
         ArrayList list_books = new ArrayList<Book>();
         list_books.add(fellowshipOfTheRing);
