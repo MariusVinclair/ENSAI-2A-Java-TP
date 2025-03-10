@@ -1,11 +1,9 @@
 package fr.ensai.library;
 
 import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
-import fr.ensai.library.Book;
-import fr.ensai.library.Author;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,25 +16,28 @@ public class Library {
     
     // Attributes
     private String name;
-    private List<Book> books;
+    private ArrayList<Item> items;
 
     /**
      * Constructs a new Library object.
      */
-    public Library(String name, List<Book> books) {
+    public Library(String name, ArrayList<Item> items) {
         this.name = name;
-        this.books = books;
+        this.items = items;
     }
 
-    public void addBook(Book book) {
-        this.books.add(book);
+    public void addItem(Item item) {
+        this.items.add(item);
     }
 
-    public String displayBooks() {
-        if (this.books.isEmpty()){
-            return ("There is no book");
+    public String displayItems() {
+        if (this.items.isEmpty()){
+            return ("There is no item");
         } else {
-            return (this.books.toString());
+            for (Item item : this.items){
+                System.out.println(item);
+            }
+            return "";
         }
     }
 
@@ -73,9 +74,9 @@ public class Library {
                         authors.put(authorName, author);
                         System.out.println(author.toString());
                     }
-                    Book book = new Book(isbn, title, author, year, pageCount);
+                    Book book = new Book(title, year, pageCount, isbn, author);
 
-                    this.addBook(book);
+                    this.addItem(book);
                 }
             }
         } catch (

@@ -1,7 +1,6 @@
 package fr.ensai.library;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -10,16 +9,21 @@ public class Main {
         Author tolkien = new Author("J.R.R. Tolkien", 81, "UK");
 
         Book fellowshipOfTheRing = new Book(
-                "978-0-618-26025-6",
-                "The Fellowship of the Ring",
-                tolkien,
-                1954,
-                423);
+            "The Fellowship of the Ring",
+            1954,
+            423,
+            "978-0-618-26025-6",
+            tolkien);
 
-        ArrayList list_books = new ArrayList<>(fellowshipOfTheRing);
+        ArrayList list_books = new ArrayList<Book>();
+        list_books.add(fellowshipOfTheRing);
 
         Library cdi = new Library("cdi", list_books);
 
         System.out.println(fellowshipOfTheRing.toString());
+
+        cdi.loadBooksFromCSV(null);
+
+        cdi.displayItems();
     }
 }
