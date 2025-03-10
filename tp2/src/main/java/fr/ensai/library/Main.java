@@ -29,14 +29,14 @@ public class Main {
             "978-0-618-26025-8",
             1056);
 
-        ArrayList list_books = new ArrayList<Book>();
-        list_books.add(fellowshipOfTheRing);
+        ArrayList list_items = new ArrayList<Item>();
+        list_items.add(fellowshipOfTheRing);
 
-        Library cdi = new Library("cdi", list_books);
+        Library cdi = new Library("cdi", list_items);
 
         System.out.println(fellowshipOfTheRing.toString());
 
-        cdi.loadBooksFromCSV(null);
+        cdi.loadBooksFromCSV(books.csv);
 
         cdi.displayItems();
     }
