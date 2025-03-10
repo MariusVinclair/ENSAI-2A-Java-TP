@@ -1,5 +1,8 @@
 package fr.ensai.library;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +15,10 @@ public class Main {
                 tolkien,
                 1954,
                 423);
+
+        ArrayList list_books = new ArrayList<>(fellowshipOfTheRing);
+
+        Library cdi = new Library("cdi", list_books);
 
         System.out.println(fellowshipOfTheRing.toString());
     }
