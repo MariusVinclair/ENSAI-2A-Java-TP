@@ -45,6 +45,19 @@ public class Library {
         }
     }
 
+    public ArrayList<Loan> getActiveLoans() {
+        return this.activeLoans;
+    }
+
+    public Loan findActiveLoanForItem(Item item) {
+        for (Loan loan : this.activeLoans) {
+            if (loan.getItem() == item) {
+                return loan;
+            }
+        }
+        return null;
+    }
+
     /**
      * Loads books from a CSV file and adds them to the library.
      * 

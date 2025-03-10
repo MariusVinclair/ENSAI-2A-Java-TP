@@ -34,7 +34,7 @@ public class Main {
         list_items.add(equipe);
         list_items.add(leMonde);
 
-        Library cdi = new Library("cdi", list_items);
+        Library cdi = new Library("cdi", list_items, null, null);
 
         System.out.println(fellowshipOfTheRing.toString());
 

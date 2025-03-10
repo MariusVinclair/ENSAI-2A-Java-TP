@@ -30,6 +30,10 @@ public class Loan {
         this.returnDate = newReturnDate;
     }
 
+    public Item getItem() {
+        return this.item;
+    }
+
     public String toString() {
         return "Item " + this.item + " borrowed by " + this.student;
     }
