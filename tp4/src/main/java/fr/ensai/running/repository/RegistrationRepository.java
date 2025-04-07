@@ -10,13 +10,13 @@ import java.util.List;
 
 public interface RegistrationRepository extends JpaRepository<Registration, Long> {
 
-    @Query(value = """
+    /*@Query(value = """
             SELECT r.registration.id
             FROM Registration r
             WHERE r.competition.id = :idCompetition
             AND r.athlete.id = :idAthlete
             """, nativeQuery = false)
-    Registration findByIdAthleteAndIdCompetition(@Param("idCompetition") Long idCompetition, @Param("idAthlete") Long idAthlete);
+    Registration findByIdAthleteAndIdCompetition(@Param("idCompetition") Long idCompetition, @Param("idAthlete") Long idAthlete);*/
 
     /*@Query(value = """
         SELECT r.athlete.id
