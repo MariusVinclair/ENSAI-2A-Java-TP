@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import fr.ensai.running.model.Competition;
 import fr.ensai.running.repository.CompetitionRepository;
+import fr.ensai.running.repository.RegistrationRepository;
+import fr.ensai.running.model.Athlete;
 
 @Service
 public class CompetitionService {
@@ -17,6 +19,7 @@ public class CompetitionService {
 
     @Autowired
     private CompetitionRepository competitionRepository;
+    private RegistrationRepository registrationRepository;
 
     /**
      * Find a Competition by id
@@ -40,5 +43,9 @@ public class CompetitionService {
     public void deleteById(Long id) {
         competitionRepository.deleteById(id);
         log.warn("Competition {} deleted", id);
+    }
+
+    public List<Athlete> findRegisteredAthletes(Long idCompetition) {
+        List<Athlete> registrationRepository.findAthleteIdByCompetitionId(idCompetition);
     }
 }
