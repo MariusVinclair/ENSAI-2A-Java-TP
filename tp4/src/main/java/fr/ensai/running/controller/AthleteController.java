@@ -49,13 +49,13 @@ public class AthleteController {
     }
 
     /**
-     * Delete an Athlete by id
+     * Delete an Athlete by idAthlete
      */
-    @GetMapping("/delete/{id}")
-    public String deleteAthleteById(@PathVariable(value = "id") long id) {
-        Athlete athlete = athleteService.findById(id);
+    @GetMapping("/delete/{idAthlete}")
+    public String deleteAthleteById(@PathVariable(value = "idAthlete") long idAthlete) {
+        Athlete athlete = athleteService.findById(idAthlete);
         if (athlete != null) {
-            athleteService.deleteById(id);
+            athleteService.deleteById(idAthlete);
         }
         return "redirect:/athlete"; // redirection to endpoint /athlete
 

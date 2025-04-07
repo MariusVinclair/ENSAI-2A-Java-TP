@@ -19,12 +19,12 @@ public class AthleteService {
     private AthleteRepository athleteRepository;
 
     /**
-     * Find an Athlete by id
+     * Find an Athlete by idAthlete
      * 
      * @return Athlete or null if not found
      */
-    public Athlete findById(Long id) {
-        return athleteRepository.findById(id).orElse(null);
+    public Athlete findById(Long idAthlete) {
+        return athleteRepository.findById(idAthlete).orElse(null);
     }
 
     /**
@@ -42,10 +42,10 @@ public class AthleteService {
     }
 
     /**
-     * Delete an Athlete by id
+     * Delete an Athlete by idAthlete
      */
-    public void deleteById(Long id) {
-        athleteRepository.deleteById(id);
-        log.warn("Athlete {} deleted", id);
+    public void deleteById(Long idAthlete) {
+        athleteRepository.deleteById(idAthlete);
+        log.warn("Athlete {} deleted", idAthlete);
     }
 }

@@ -18,15 +18,15 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_registration")
-    private long id;
+    private Long idRegistration;
 
     @ManyToOne
     @JoinColumn(name = "id_athlete")
-    private long idAthlete;
+    private Athlete idAthlete;
 
     @ManyToOne
     @JoinColumn(name = "id_competition")
-    private long idCompetition;
+    private Competition idCompetition;
 
     @Column(name = "registration_date")
     private LocalDate registrationDate;

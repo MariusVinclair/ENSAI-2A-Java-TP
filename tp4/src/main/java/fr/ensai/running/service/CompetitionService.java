@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import fr.ensai.running.model.Competition;
 import fr.ensai.running.repository.CompetitionRepository;
-import fr.ensai.running.repository.RegistrationRepository;
+/*import fr.ensai.running.repository.RegistrationRepository;*/
 import fr.ensai.running.model.Athlete;
 
 @Service
@@ -19,15 +19,17 @@ public class CompetitionService {
 
     @Autowired
     private CompetitionRepository competitionRepository;
-    private RegistrationRepository registrationRepository;
+    
+    /*@Autowired
+    private RegistrationRepository registrationRepository;*/
 
     /**
-     * Find a Competition by id
+     * Find a Competition by idCompetition
      * 
      * @return Competition or null if not found
      */
-    public Competition findById(Long id) {
-        return competitionRepository.findById(id).orElse(null);
+    public Competition findById(Long idCompetition) {
+        return competitionRepository.findById(idCompetition).orElse(null);
     }
 
     /**
@@ -38,14 +40,14 @@ public class CompetitionService {
     }
 
     /**
-     * Delete a Competition by id
+     * Delete a Competition by idCompetition
      */
-    public void deleteById(Long id) {
-        competitionRepository.deleteById(id);
-        log.warn("Competition {} deleted", id);
+    public void deleteById(Long idCompetition) {
+        competitionRepository.deleteById(idCompetition);
+        log.warn("Competition {} deleted", idCompetition);
     }
 
-    public List<Athlete> findRegisteredAthletes(Long idCompetition) {
-        List<Athlete> registrationRepository.findAthleteIdByCompetitionId(idCompetition);
-    }
+    /*public List<Athlete> findRegisteredAthletes(Long idCompetition) {
+        return registrationRepository.findIdAthleteByIdCompetition(idCompetition);
+    }*/
 }

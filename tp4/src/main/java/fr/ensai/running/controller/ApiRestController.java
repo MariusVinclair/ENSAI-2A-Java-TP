@@ -33,11 +33,11 @@ public class ApiRestController {
     }
 
     /**
-     * Get an Athlete by id
+     * Get an Athlete by idAthlete
      */
-    @GetMapping("/athlete/{id}")
-    public ResponseEntity<Athlete> getAthleteById(@PathVariable Long id) {
-        Athlete athlete = athleteService.findById(id);
+    @GetMapping("/athlete/{idAthlete}")
+    public ResponseEntity<Athlete> getAthleteById(@PathVariable Long idAthlete) {
+        Athlete athlete = athleteService.findById(idAthlete);
         if (athlete == null) {
             return ResponseEntity.notFound().build();
         }
@@ -45,15 +45,15 @@ public class ApiRestController {
     }
 
     /**
-     * Delete an Athlete by id
+     * Delete an Athlete by idAthlete
      */
-    @DeleteMapping("/athlete/{id}")
-    public ResponseEntity<Void> deleteAthleteById(@PathVariable Long id) {
-        Athlete existingAthlete = athleteService.findById(id);
+    @DeleteMapping("/athlete/{idAthlete}")
+    public ResponseEntity<Void> deleteAthleteById(@PathVariable Long idAthlete) {
+        Athlete existingAthlete = athleteService.findById(idAthlete);
         if (existingAthlete == null) {
             return ResponseEntity.notFound().build();
         }
-        athleteService.deleteById(id);
+        athleteService.deleteById(idAthlete);
         return ResponseEntity.noContent().build();
     }
 

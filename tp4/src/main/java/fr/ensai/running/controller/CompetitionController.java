@@ -30,13 +30,13 @@ public class CompetitionController {
     }
 
     /**
-     * Delete a Competition by id
+     * Delete a Competition by idCompetition
      */
-    @GetMapping("/delete/{id}")
-    public String deleteCompetitionById(@PathVariable(value = "id") long id) {
-        Competition competition = competitionService.findById(id);
+    @GetMapping("/delete/{idCompetition}")
+    public String deleteCompetitionById(@PathVariable(value = "idCompetition") long idCompetition) {
+        Competition competition = competitionService.findById(idCompetition);
         if (competition != null) {
-            competitionService.deleteById(id);
+            competitionService.deleteById(idCompetition);
         }
         return "redirect:/competition"; // redirection to endpoint /competition
 
